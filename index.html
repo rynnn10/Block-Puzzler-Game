@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Block Puzzler</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="start-screen" class="start-screen">
+      <h1>Block Puzzler</h1>
+      <button id="start-game-btn">Mulai Bermain</button>
+      <button id="info-btn-main" class="info-button">Cara Bermain</button>
+    </div>
+
+    <div id="game-popup" class="game-popup hidden">
+      <div class="game-content">
+        <header class="header">
+          <div class="score-container">
+            <div class="score-box">
+              <div class="score-label">Skor</div>
+              <div class="score-value" id="score">0</div>
+            </div>
+            <div class="score-box">
+              <div class="score-label">Skor Tertinggi</div>
+              <div class="score-value" id="high-score">0</div>
+            </div>
+            <div class="score-box">
+              <div class="score-label">Level</div>
+              <div class="score-value" id="level">1</div>
+            </div>
+            <div class="score-box">
+              <div class="score-label">Waktu</div>
+              <div class="score-value" id="time">00:00</div>
+            </div>
+          </div>
+          <div class="game-controls">
+            <button id="sound-btn" class="material-symbols-outlined">
+              volume_up
+            </button>
+            <button id="pause-btn" class="material-symbols-outlined">
+              pause
+            </button>
+          </div>
+        </header>
+        <div class="game-area">
+          <div class="game-board" id="game-board"></div>
+          <div class="sidebar">
+            <div class="preview-container" id="preview-container"></div>
+            <button id="rotate-btn" class="material-symbols-outlined">
+              rotate_90_degrees_cw
+            </button>
+          </div>
+        </div>
+
+        <div class="mobile-controls" id="mobile-controls">
+          <button id="left-btn" class="material-symbols-outlined">
+            chevron_left
+          </button>
+          <button id="down-btn" class="material-symbols-outlined">
+            keyboard_arrow_down
+          </button>
+          <button id="right-btn" class="material-symbols-outlined">
+            chevron_right
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="pause-menu" class="pause-menu hidden">
+      <div class="pause-content">
+        <h2>Game Dijeda</h2>
+        <button id="resume-btn">
+          <span class="material-symbols-outlined">play_arrow</span> Lanjutkan
+        </button>
+        <button id="restart-pause-btn">
+          <span class="material-symbols-outlined">replay</span> Mulai Ulang
+        </button>
+        <button id="home-pause-btn">
+          <span class="material-symbols-outlined">home</span> Menu Utama
+        </button>
+        <button id="info-btn-pause">Cara Bermain</button>
+      </div>
+    </div>
+
+    <div class="game-over" id="game-over">
+      <div class="game-over-content">
+        <h2>Game Over!</h2>
+        <p>Skor Anda: <span id="final-score">0</span></p>
+        <p>Skor Tertinggi: <span id="final-high-score">0</span></p>
+        <div class="game-over-buttons">
+          <button
+            id="home-btn"
+            title="Kembali ke Menu"
+            class="material-symbols-outlined"
+          >
+            home
+          </button>
+          <button
+            id="restart-btn"
+            title="Main Lagi"
+            class="material-symbols-outlined"
+          >
+            replay
+          </button>
+          <button
+            id="share-btn"
+            title="Bagikan Skor"
+            class="material-symbols-outlined"
+          >
+            share
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="info-popup" class="info-popup hidden">
+      <div class="info-content">
+        <h2>Cara Bermain</h2>
+        <ul>
+          <li>
+            <strong>Tujuan:</strong> Isi baris horizontal dengan balok untuk
+            membersihkannya dan mendapatkan poin.
+          </li>
+          <li>
+            <strong>Kontrol Desktop:</strong> Gunakan tombol panah (←, →, ↓)
+            untuk bergerak dan panah atas (↑) atau Spasi untuk memutar balok.
+          </li>
+          <li>
+            <strong>Kontrol Mobile:</strong> Gunakan tombol di layar untuk
+            menggerakkan dan memutar balok.
+          </li>
+          <li>
+            <strong>Poin & Level:</strong> Poin hanya didapat saat baris bersih.
+            Bersihkan 10 baris untuk naik level.
+          </li>
+          <li>
+            <strong>Waktu:</strong> Waktu akan berjalan mundur. Dapatkan bonus
+            10 detik setiap kali berhasil membersihkan baris.
+          </li>
+        </ul>
+        <button id="close-info-btn">Mengerti</button>
+      </div>
+    </div>
+    <div id="level-up-popup" class="level-up-popup">
+      Level Up!
+      <span id="new-level-display"></span>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
